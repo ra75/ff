@@ -87,14 +87,21 @@ function mobileCheck () {
 
 function getScript(){
 	//prevent double execution  (not required but opera mobile, executes twice)
-	return 'http://ad.leadbolt.net/show_app_ad.js?section_id=201557133';
+	if( mobileCheck() )
+	{
+		return 'http://ad.leadbolt.net/show_app_ad.js?section_id=201557133';
+	} 
+	else
+	{
+		return '<script type="text/javascript">  ( function() {    if (window.CHITIKA === undefined) { window.CHITIKA = { \'units\' : [] }; };    var unit = {"calltype":"async[2]","publisher":"mahatrk","width":320,"height":50,"sid":"Chitika Default"};    var placement_id = window.CHITIKA.units.length;    window.CHITIKA.units.push(unit);    document.write(\'<div id="chitikaAdBlock-\' + placement_id + \'"></div>\');}());<\/script><script type="text/javascript" src="//cdn.chitika.net/getads.js" async><\/script>';
+	}
 }
 
 var calledJsCounter = 0;
 
 //var postscribe = require('postscribe');
 
-postscribe("#adheader",'<script type="text/javascript" src="http://ad.leadbolt.net/show_app_ad.js?section_id=201557133"><\/script>');
+postscribe("#adheader", getScript() );
 /*	
 var script = document.createElement( 'script' );
 script.type = 'text/javascript';
