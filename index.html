@@ -134,16 +134,18 @@ $("#adheader").append( script ); //might have problem in some browser (called tw
    
     
     <div style='height:10%; width:100%;'>
+	    <div id='nolkfdsjjk'>
 	    <script type="text/javascript">
-  ( function() {
-    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-    var unit = {"calltype":"async[2]","publisher":"mahatrk","width":320,"height":50,"sid":"Chitika Default"};
-    var placement_id = window.CHITIKA.units.length;
-    window.CHITIKA.units.push(unit);
-    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-</script>
-<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+		  ( function() {
+		    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+		    var unit = {"calltype":"async[2]","publisher":"mahatrk","width":320,"height":50,"sid":"Chitika Default"};
+		    var placement_id = window.CHITIKA.units.length;
+		    window.CHITIKA.units.push(unit);
+		    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+		}());
+		</script>
+		<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+	    </div>
     </div>  
 
   </div> <!--top div -->
